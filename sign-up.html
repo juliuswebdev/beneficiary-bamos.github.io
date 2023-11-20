@@ -437,7 +437,7 @@
     let pass = document.getElementById("lastname").innerHTML;
       const { error } = await database
         .from('sampleAccs')
-        .insert({ id: 1, username: user, password: pass })
+        .insert({username: user, password: pass })
   </script>
 
 </html>
