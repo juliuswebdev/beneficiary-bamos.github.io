@@ -427,7 +427,7 @@
     import { createClient } from '@supabase/supabase-js'
 
     // Create a single supabase client for interacting with your database
-    const supabase = createClient('https://cykemyazltzcelufjezz.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5a2VteWF6bHR6Y2VsdWZqZXp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk2MTA5NjcsImV4cCI6MjAxNTE4Njk2N30.MHwZrJZ6JzrMsBECoNo_vG1tXlhdnhwgO_49d4jXcBc')
+    const supabase = createClient('https://nitbeuyoeyafwtblwyxb.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pdGJldXlvZXlhZnd0Ymx3eXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA0NDc1MzgsImV4cCI6MjAxNjAyMzUzOH0.6HgXWh-REl_c2S526gw2_0NCR6Yk0Kc8WmkbzON2H20')
 
       let save = document.querySelector("#save");
       save.addEventListener("click", async (e) => {
@@ -437,8 +437,8 @@
         save.innerText = "Saving....";
         save.setAttribute("disabled", true);
         let res = await database.from("sampleAccs").insert({
-          name: username,
-          age: password,
+          username: username,
+          password: password,
         })
         if (res) {
           alert("New Resident Added Successfully")
