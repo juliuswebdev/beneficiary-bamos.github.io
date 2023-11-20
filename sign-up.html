@@ -429,14 +429,14 @@
     // Create a single supabase client for interacting with your database
     const supabase = createClient(url, key);
 
-    let save = document.querySelector("#save");
+    let save = document.getElementById("save");
     save.addEventListener("click", async (e) => {
       e.preventDefault();
-      let username = document.querySelector("#firstname").value;
-      let password = document.querySelector("#lastname").value;
+      let username = document.getElementById("firstname").value;
+      let password = document.getElementById("lastname").value;
       save.innerText = "Saving....";
       save.setAttribute("disabled", true);
-      let res = await database.from("residents").insert({
+      let res = await database.from("sampleAccs").insert({
         username: username,
         password: password,
       })
