@@ -434,7 +434,7 @@
       let pass = document.getElementById("lastname").value;
 
 
-      const { data, error } = supabase.from('sampleAccs').insert({ username: user, password: pass });
+      const { data, error } = await supabase.from('sampleAccs').insert({ username: user, password: pass });
     }
   </script>
 
