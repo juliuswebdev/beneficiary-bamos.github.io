@@ -207,7 +207,7 @@
                         site.
                       </label>
                     </div>
-                    <a href="get-started.html" class="btn btn-light btn-lg" type="submit" onclick="add">Register</a>
+                    <a href="get-started.html" class="btn btn-light btn-lg" type="submit" id="save">Register</a>
                   </div>
                 </div>
               </div>
@@ -423,23 +423,34 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   <script>
-  
+
     import { createClient } from '@supabase/supabase-js'
-  
+
     // Create a single supabase client for interacting with your database
     const supabase = createClient('https://cykemyazltzcelufjezz.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5a2VteWF6bHR6Y2VsdWZqZXp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk2MTA5NjcsImV4cCI6MjAxNTE4Njk2N30.MHwZrJZ6JzrMsBECoNo_vG1tXlhdnhwgO_49d4jXcBc')
-  
-    function add() {
-      let username = document.getElementById("firstname").value;
-      let password = document.getElementById("lastname").value;
-  
-      
-  const { data, error } = await supabase
-    .from('sampleAccs')
-    .insert([
-      { username: username, password: password },
-    ])       
-      }
+
+      let save = document.querySelector("#save");
+      save.addEventListener("click", async (e) => {
+        e.preventDefault();
+        let username = document.querySelector("#firstname").value;
+        let password = document.querySelector("#lastname").value;
+        save.innerText = "Saving....";
+        save.setAttribute("disabled", true);
+        let res = await database.from("sampleAccs").insert({
+          name: username,
+          age: password,
+        })
+        if (res) {
+          alert("New Resident Added Successfully")
+          save.innerText = "Saved"
+          save.setAttribute("disabled", false);
+
+        } else {
+          alert("New Resident Added Unsuccessfully")
+          save.innerText = "Save"
+          save.setAttribute("disabled", false);
+        }
+      })
   </script>
 
 </html>
