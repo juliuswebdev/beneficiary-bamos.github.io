@@ -207,7 +207,7 @@
                         site.
                       </label>
                     </div>
-                    <a href="get-started.html" class="btn btn-light btn-lg" type="submit" onclick="add()">Register</a>
+                    <a href="get-started.html" type="submit" onclick="add()" class="btn btn-light btn-lg">Register</a>
                   </div>
                 </div>
               </div>
@@ -434,9 +434,7 @@
       let pass = document.getElementById("lastname").value;
 
 
-      const { data, error } = await supabase
-        .from('sampleAccs')
-        .insert({ username: user, password: pass })
+      const { data, error } = supabase.from('sampleAccs').insert({ username: user, password: pass });
     }
   </script>
 
