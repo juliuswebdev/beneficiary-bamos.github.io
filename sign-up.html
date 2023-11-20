@@ -44,12 +44,10 @@
     let fname = document.getElementById("firstname").value;
 
 
-    const { data, error } = await supabase
+
+    const { error } = await supabase
       .from('AdminAccs')
-      .insert(
-        { username: 'fname', password: 'lname' },
-      )
-      .select()
+      .insert({ username: fname, password: lname })
 
   }
 </script>
