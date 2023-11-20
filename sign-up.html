@@ -430,8 +430,8 @@
     const supabase = createClient(url, key);
 
     function add() {
-      let user = document.getElementById("firstname").innerText;
-      let pass = document.getElementById("lastname").innerText;
+      let user = document.getElementById("firstname").nodeValue;
+      let pass = document.getElementById("lastname").nodeValue;
 
 
       const { data, error } = await supabase
