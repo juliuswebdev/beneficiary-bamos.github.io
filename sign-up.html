@@ -41,31 +41,21 @@
 
   function add() {
 
-    let save = document.querySelector("#save");
-    save.addEventListener("click", async (e) => {
-      e.preventDefault();
       let username = document.querySelector("#firstname").value;
       let password = document.querySelector("#lastname").value;
-      save.innerText = "Saving....";
-      save.setAttribute("disabled", true);
       let res = await database.from("AdminAccs").insert({
         username: username,
         password: password,
       })
       if (res) {
         alert("New Resident Added Successfully")
-        save.innerText = "Saved"
-        save.setAttribute("disabled", false);
         username = "";
         password = "";
 
       } else {
         alert("New Resident Added Unsuccessfully")
-        save.innerText = "Save"
-        save.setAttribute("disabled", false);
       }
-    })
-  }
+    }
 </script>
 
 <body>
@@ -244,7 +234,7 @@
                         site.
                       </label>
                     </div>
-                    <a href="get-started.html" class="btn btn-light btn-lg" type="submit" id="save" onclick="add">Register</a>
+                    <a href="get-started.html" class="btn btn-light btn-lg" type="submit" onclick="add">Register</a>
                   </div>
                 </div>
               </div>
