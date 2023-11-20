@@ -30,6 +30,27 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
+<script>
+
+import { createClient } from '@supabase/supabase-js'
+
+// Create a single supabase client for interacting with your database
+const supabase = createClient('https://cykemyazltzcelufjezz.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5a2VteWF6bHR6Y2VsdWZqZXp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk2MTA5NjcsImV4cCI6MjAxNTE4Njk2N30.MHwZrJZ6JzrMsBECoNo_vG1tXlhdnhwgO_49d4jXcBc')
+
+function add(){
+  let lname = document.getElementById("lastname").value;
+  let fname = document.getElementById("firstname").value;
+
+  
+const { data, error } = await supabase
+  .from('AdminAccs')
+  .insert([
+    { username: 'fname', password: 'lname' },
+  ])
+  .select()
+          
+}
+</script>
 
 <body>
 
@@ -68,21 +89,21 @@
                       <div class="col-md-6 mb-4 pb-2">
 
                         <div class="form-outline">
-                          <input type="text" id="form3Examplev2" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplev2">Last name</label>
+                          <input type="text" id="lastname" class="form-control form-control-lg" />
+                          <label class="form-label" for="lastname">Last name</label>
                         </div>
 
                         <div class="form-outline">
-                          <input type="text" id="form3Examplev2" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplev2">Middle name</label>
+                          <input type="text" id="middlename" class="form-control form-control-lg" />
+                          <label class="form-label" for="middlename">Middle name</label>
                         </div>
 
                       </div>
                       <div class="col-md-6 mb-4 pb-2">
 
                         <div class="form-outline">
-                          <input type="text" id="form3Examplev3" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplev3">First name</label>
+                          <input type="text" id="firstname" class="form-control form-control-lg" />
+                          <label class="form-label" for="firstname">First name</label>
                         </div>
 
                       </div>
@@ -206,7 +227,7 @@
                         site.
                       </label>
                     </div>
-                    <a href="get-started.html" class="btn btn-light btn-lg"  type="submit">Register</a>
+                    <a href="get-started.html" class="btn btn-light btn-lg"  type="submit" onclick="add">Register</a>
                   </div>
                 </div>
               </div>
