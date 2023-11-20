@@ -435,7 +435,7 @@
   
       
   const { data, error } = await supabase
-    .from('AdminAccs')
+    .from('sampleAccs')
     .insert([
       { username: username, password: password },
     ])       
