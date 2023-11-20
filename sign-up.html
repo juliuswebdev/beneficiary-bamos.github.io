@@ -34,24 +34,24 @@
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 <script>
 
-import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@supabase/supabase-js'
 
-// Create a single supabase client for interacting with your database
-const supabase = createClient('https://cykemyazltzcelufjezz.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5a2VteWF6bHR6Y2VsdWZqZXp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk2MTA5NjcsImV4cCI6MjAxNTE4Njk2N30.MHwZrJZ6JzrMsBECoNo_vG1tXlhdnhwgO_49d4jXcBc')
+  // Create a single supabase client for interacting with your database
+  const supabase = createClient('https://cykemyazltzcelufjezz.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5a2VteWF6bHR6Y2VsdWZqZXp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk2MTA5NjcsImV4cCI6MjAxNTE4Njk2N30.MHwZrJZ6JzrMsBECoNo_vG1tXlhdnhwgO_49d4jXcBc')
 
-function add(){
-  let lname = document.getElementById("lastname").value;
-  let fname = document.getElementById("firstname").value;
+  function add() {
+    let lname = document.getElementById("lastname").value;
+    let fname = document.getElementById("firstname").value;
 
-  
-const { data, error } = await supabase
-  .from('AdminAccs')
-  .insert(
-    { username: 'fname', password: 'lname' },
-  )
-  .select()
-          
-}
+
+    const { data, error } = await supabase
+      .from('AdminAccs')
+      .insert(
+        { username: 'fname', password: 'lname' },
+      )
+      .select()
+
+  }
 </script>
 
 <body>
@@ -134,7 +134,7 @@ const { data, error } = await supabase
                           <input type="text" id="form3Examplev5" class="form-control form-control-lg" />
                           <label class="form-label" for="form3Examplev5">---</label>
                         </div>
-                        
+
 
                       </div>
                       <div class="col-md-6">
@@ -225,11 +225,12 @@ const { data, error } = await supabase
                     <div class="form-check d-flex justify-content-start mb-4 pb-3">
                       <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
                       <label class="form-check-label text-white" for="form2Example3">
-                        I do accept the <a href="terms-conditions.html" class="text-white"><u>Terms and Conditions</u></a> of your
+                        I do accept the <a href="terms-conditions.html" class="text-white"><u>Terms and
+                            Conditions</u></a> of your
                         site.
                       </label>
                     </div>
-                    <a href="get-started.html" class="btn btn-light btn-lg"  type="submit" onclick="add">Register</a>
+                    <a href="get-started.html" class="btn btn-light btn-lg" type="submit" onclick="add">Register</a>
                   </div>
                 </div>
               </div>
@@ -251,20 +252,21 @@ const { data, error } = await supabase
       <div class="container">
         <div class="row">
 
-         
-          
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>BAMOS</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-       
-      </div>
-    </div>
+
+
+          <div class="container">
+            <div class="copyright">
+              &copy; Copyright <strong><span>BAMOS</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+
+            </div>
+          </div>
   </footer><!--End Footer-->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -278,165 +280,168 @@ const { data, error } = await supabase
   <!--Template Main JS File-->
   <script src="assets/js/main.js"></script>
 
-</body>
+  </body>
 
 
 
-<style>
-  .body{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
-  .gradient-custom {
-    background: #0c0711;
-    background: linear-gradient(to bottom, #b3b6b6, #A7D397)
-  }
-
-  @media (min-width: 1025px) {
-    .h-custom {
-      height: 100vh !important;
+  <style>
+    .body {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
-  }
 
-  div.card {
-    zoom: 70%;
-  }
-
-  .card-registration .select-input.form-control :not([disabled]) {
-    font-size: 1rem;
-    line-height: 2.15;
-    padding-left: .75em;
-    padding-right: .75em;
-  }
-
-  .card-registration .select-arrow {
-    top: 13px;
-  }
-
-  .gradient-custom-2 {
-    background: #a1c4fd;
-
-    background: linear-gradient(to bottom, #b3b6b6, #A7D397 );
-
-    background: linear-gradient(to bottom, #b3b6b6, #A7D397 );
-  }
-
-  .bg-indigo {
-    background-color: rgb(60, 60, 60);
-  }
-
-  @media (min-width: 992px) {
-    .card-registration-2 .bg-indigo {
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
+    .gradient-custom {
+      background: #0c0711;
+      background: linear-gradient(to bottom, #b3b6b6, #A7D397)
     }
-  }
 
-  @media (max-width: 991px) {
-    .card-registration-2 .bg-indigo {
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
+    @media (min-width: 1025px) {
+      .h-custom {
+        height: 100vh !important;
+      }
     }
-  }
 
-.gradient-custom {
-  background: linear-gradient(to bottom, #b3b6b6, #A7D397 )
-}
+    div.card {
+      zoom: 70%;
+    }
 
-div.card{
-  zoom: 75%;
-}
+    .card-registration .select-input.form-control :not([disabled]) {
+      font-size: 1rem;
+      line-height: 2.15;
+      padding-left: .75em;
+      padding-right: .75em;
+    }
 
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-}
+    .card-registration .select-arrow {
+      top: 13px;
+    }
 
-/* The popup form - hidden by default */
-.form-popup {
-  max-width: 30%;
-  display: none;
-  position: fixed;
-  top: 50px;
-  bottom: 30px;
-  border: 5px solid #f1f1f1;
-  border-radius: 10px;
-  z-index: 9;
-}
+    .gradient-custom-2 {
+      background: #a1c4fd;
 
-/* Add styles to the form container */
-.form-container {
-  padding: 50px;
-  background-color: rgb(49, 48, 48);
-  border-radius: 10px;
-}
+      background: linear-gradient(to bottom, #b3b6b6, #A7D397);
 
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-}
+      background: linear-gradient(to bottom, #b3b6b6, #A7D397);
+    }
 
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
+    .bg-indigo {
+      background-color: rgb(60, 60, 60);
+    }
 
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
+    @media (min-width: 992px) {
+      .card-registration-2 .bg-indigo {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+    }
 
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
+    @media (max-width: 991px) {
+      .card-registration-2 .bg-indigo {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+    }
 
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
+    .gradient-custom {
+      background: linear-gradient(to bottom, #b3b6b6, #A7D397)
+    }
+
+    div.card {
+      zoom: 75%;
+    }
+
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+
+    /* The popup form - hidden by default */
+    .form-popup {
+      max-width: 30%;
+      display: none;
+      position: fixed;
+      top: 50px;
+      bottom: 30px;
+      border: 5px solid #f1f1f1;
+      border-radius: 10px;
+      z-index: 9;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+      padding: 50px;
+      background-color: rgb(49, 48, 48);
+      border-radius: 10px;
+    }
+
+    /* Full-width input fields */
+    .form-container input[type=text],
+    .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus,
+    .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
 
 
-#footer .copyright {
-  text-align: center;
-  padding-top: 0px;
-}
+    #footer .copyright {
+      text-align: center;
+      padding-top: 0px;
+    }
 
-#footer .credits {
-  padding-top: 0px;
-  text-align: center;
-  font-size: 13px;
-  color: #000000;
-}
+    #footer .credits {
+      padding-top: 0px;
+      text-align: center;
+      font-size: 13px;
+      color: #000000;
+    }
+  </style>
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
 
-</style>
-<script>
-  function openForm() {
-    document.getElementById("myForm").style.display = "block";
-  }
-  
-  function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-  }
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
   </script>
 
 </html>
