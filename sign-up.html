@@ -207,7 +207,7 @@
                         site.
                       </label>
                     </div>
-                    <a href="get-started.html" class="btn btn-light btn-lg" type="submit" onclick="add">Register</a>
+                    <a href="get-started.html" class="btn btn-light btn-lg" type="submit" onclick="add()">Register</a>
                   </div>
                 </div>
               </div>
@@ -430,8 +430,8 @@
     const supabase = createClient(url, key);
 
     function add() {
-      let user = document.getElementById("firstname").nodeValue;
-      let pass = document.getElementById("lastname").nodeValue;
+      let user = document.getElementById("firstname").value;
+      let pass = document.getElementById("lastname").value;
 
 
       const { data, error } = await supabase
