@@ -430,13 +430,14 @@
     const database = supabase.createClient(url, key);
 
     function add() {
-      let user = document.getElementById("firstname").value;
-      let pass = document.getElementById("lastname").value;
+      return;
+    }
 
+    let user = document.getElementById("firstname").innerHTML;
+    let pass = document.getElementById("lastname").innerHTML;
       const { error } = await database
         .from('sampleAccs')
         .insert({ id: 1, username: user, password: pass })
-    }
   </script>
 
 </html>
