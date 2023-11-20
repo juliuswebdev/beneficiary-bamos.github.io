@@ -429,28 +429,19 @@
     // Create a single supabase client for interacting with your database
     const supabase = createClient('https://nitbeuyoeyafwtblwyxb.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pdGJldXlvZXlhZnd0Ymx3eXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA0NDc1MzgsImV4cCI6MjAxNjAyMzUzOH0.6HgXWh-REl_c2S526gw2_0NCR6Yk0Kc8WmkbzON2H20')
 
-      let save = document.querySelector("#save");
-      save.addEventListener("click", async (e) => {
-        e.preventDefault();
-        let username = document.querySelector("#firstname").value;
-        let password = document.querySelector("#lastname").value;
-        save.innerText = "Saving....";
-        save.setAttribute("disabled", true);
-        let res = await database.from("sampleAccs").insert({
-          username: username,
-          password: password,
-        })
-        if (res) {
-          alert("New Resident Added Successfully")
-          save.innerText = "Saved"
-          save.setAttribute("disabled", false);
+    function add() {
+      let user = document.getElementById("firstname").value;
+      let pass = document.getElementById("lastname").value;
 
-        } else {
-          alert("New Resident Added Unsuccessfully")
-          save.innerText = "Save"
-          save.setAttribute("disabled", false);
-        }
-      })
+
+      const { data, error } = await supabase
+        .from('sampleAccs')
+        .insert([
+          { username: user, password: pass },
+        ])
+        .select()
+
+    }
   </script>
 
 </html>
