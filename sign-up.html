@@ -207,7 +207,7 @@
                         site.
                       </label>
                     </div>
-                    <a href="get-started.html" class="btn btn-light btn-lg" type="submit" id="save">Register</a>
+                    <a href="get-started.html" class="btn btn-light btn-lg" type="submit" onclick="add">Register</a>
                   </div>
                 </div>
               </div>
@@ -426,7 +426,7 @@
     const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pdGJldXlvZXlhZnd0Ymx3eXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA0NDc1MzgsImV4cCI6MjAxNjAyMzUzOH0.6HgXWh-REl_c2S526gw2_0NCR6Yk0Kc8WmkbzON2H20";
     const url = "https://nitbeuyoeyafwtblwyxb.supabase.co";
     // Create a single supabase client for interacting with your database
-    const supabase = createClient(url, key)
+    const supabase = createClient(url, key);
 
     function add() {
       let user = document.getElementById("firstname").value;
