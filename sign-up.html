@@ -44,9 +44,9 @@ function add(){
   
 const { data, error } = await supabase
   .from('AdminAccs')
-  .insert([
+  .insert(
     { username: 'fname', password: 'lname' },
-  ])
+  )
   .select()
           
 }
