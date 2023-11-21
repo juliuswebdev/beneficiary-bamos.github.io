@@ -428,8 +428,8 @@
     const { createClient } = require('@supabase/supabase-js');
 
     // Replace 'YOUR_SUPABASE_URL' and 'YOUR_SUPABASE_KEY' with your Supabase project URL and API key
-    const supabaseUrl = 'https://nitbeuyoeyafwtblwyxb.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pdGJldXlvZXlhZnd0Ymx3eXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA0NDc1MzgsImV4cCI6MjAxNjAyMzUzOH0.6HgXWh-REl_c2S526gw2_0NCR6Yk0Kc8WmkbzON2H20';
+    const supabaseUrl = 'https://hzyiqzmdkocpumguttzb.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6eWlxem1ka29jcHVtZ3V0dHpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Mzc5OTMsImV4cCI6MjAxNjExMzk5M30.-JNHzAkpBh_EN99ZiYGbu1q4ZsRSE3WapgBRMPrkiZs';
 
     // Create a Supabase client
     const supabase = createClient(supabaseUrl, supabaseKey);
@@ -460,7 +460,7 @@
       let password = document.getElementById("lastname").value;
 
       const { data, error } = await supabase
-        .from('sampleAccs')
+        .from('testing')
         .insert([
           { username: username, password: password },
         ])
