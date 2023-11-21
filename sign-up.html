@@ -57,7 +57,7 @@
 
                     <div class="mb-4 pb-2">
                       <select class="select">
-                        <option value="1">Status</option>
+                        <option value="1" hidden="Status">test</option>
                         <option value="2">Current Resident</option>
                         <option value="3">-</option>
                         <option value="4">-</option>
@@ -440,10 +440,10 @@
 
         // If there's an error, log it
         if (error) {
-          console.error('Error connecting to Supabase:', error.message);
+          console.error('Error connection! Please try again.', error.message);
         } else {
           // If successful, show an alert
-          alert('Connected to Supabase successfully!');
+          alert('Connection secured!');
         }
       } catch (error) {
         console.error('Error:', error.message);
@@ -463,7 +463,7 @@
           { username: username, password: password },
         ])
 
-      console.error(error.message);
+      alert("New User Created!")
 
     }
     add();
