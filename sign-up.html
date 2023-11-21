@@ -438,7 +438,7 @@
     async function checkConnection() {
       try {
         // Try to make a request to Supabase to check the connection
-        const { data, error } = await supabase.from('sampleAccs').select();
+        const { data, error } = await supabase.from('testing').select();
 
         // If there's an error, log it
         if (error) {
