@@ -453,7 +453,8 @@
     // Call the checkConnection function
     checkConnection();
 
-    let username = document.getElementById("firstname").value;
+    let username = document.getElementsByName("firstname").value;
+    console.log(username);
     let password = document.getElementById("lastname").value;
     async function add() {
 
