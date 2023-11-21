@@ -426,20 +426,20 @@
 
     // Import the Supabase client
     const { createClient } = require('@supabase/supabase-js');
-    
+
     // Replace 'YOUR_SUPABASE_URL' and 'YOUR_SUPABASE_KEY' with your Supabase project URL and API key
     const supabaseUrl = 'https://nitbeuyoeyafwtblwyxb.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pdGJldXlvZXlhZnd0Ymx3eXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA0NDc1MzgsImV4cCI6MjAxNjAyMzUzOH0.6HgXWh-REl_c2S526gw2_0NCR6Yk0Kc8WmkbzON2H20';
-    
+
     // Create a Supabase client
     const supabase = createClient(supabaseUrl, supabaseKey);
-    
+
     // Function to check the connection status and show an alert
     async function checkConnection() {
       try {
         // Try to make a request to Supabase to check the connection
         const { data, error } = await supabase.from('sampleAccs').select();
-    
+
         // If there's an error, log it
         if (error) {
           console.error('Error connecting to Supabase:', error.message);
@@ -451,11 +451,23 @@
         console.error('Error:', error.message);
       }
     }
-    
+
     // Call the checkConnection function
     checkConnection();
-    
-    
-      </script>
-    
+
+    function add() {
+      let username = document.getElementById("firstname").value;
+      let password = document.getElementById("lastname").value;
+
+      const { data, error } = await supabase
+        .from('sampleAccs')
+        .insert([
+          { username: username, password: password },
+        ])
+
+    }
+    add();
+
+  </script>
+
 </html>
