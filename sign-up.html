@@ -57,10 +57,10 @@
 
                     <div class="mb-4 pb-2">
                       <select class="select">
-                        <option value="1" hidden="Status">test</option>
-                        <option value="2">Current Resident</option>
-                        <option value="3">-</option>
-                        <option value="4">-</option>
+                        <option hidden>Status</option>
+                        <option value="1">Current Resident</option>
+                        <option value="2">Previous Resident</option>
+                        <option value="3">Deceased Resident</option>
                       </select>
                     </div>
 
@@ -85,65 +85,56 @@
                           <label class="form-label" for="firstname">First name</label>
                         </div>
 
+                        <div class="form-outline">
+                          <input type="date" id="birthdate" class="form-control form-control-lg" />
+                          <label class="form-label" for="birthdate">Date of Birth</label>
+                        </div>
                       </div>
                     </div>
 
                     <div class="mb-4 pb-2">
                       <select class="select">
-                        <option value="1">Civil Status</option>
-                        <option value="2">Single</option>
-                        <option value="3">Married</option>
-                        <option value="4">Widowed</option>
+                        <option hidden>Civil Status</option>
+                        <option value="1">Single</option>
+                        <option value="2">Married</option>
+                        <option value="3">Widowed</option>
                       </select>
                     </div>
 
                     <div class="mb-4 pb-2">
                       <div class="form-outline">
-                        <input type="date" id="form3Examplev4" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplev4">Date of Birth</label>
+                        <input type="text" name="username" id="username" class="form-control form-control-lg">
+                        <label class="form-label" for="username">Enter new username</label>
+                      </div>
+
+                      <div class="form-outline">
+                        <input type="text" name="pass" id="pass" class="form-control form-control-lg">
+                        <label class="form-label" for="pass">Enter new password</label>
+                      </div>
+
+                      <div class="form-outline">
+                        <input type="text" name="cpass" id="cpass" class="form-control form-control-lg">
+                        <label class="form-label" for="cpass">Confirm new password</label>
                       </div>
                     </div>
-
-                    <div class="row">
-                      <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
-
-                        <div class="form-outline">
-                          <input type="text" id="form3Examplev5" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplev5">---</label>
-                        </div>
-
-
-                      </div>
-                      <div class="col-md-6">
-
-                        <select class="select">
-                          <option value="1">No. of family members</option>
-                          <option value="2">2-3</option>
-                          <option value="3">4-6</option>
-                          <option value="4">7-10</option>
-                          <option value="4">10 and</option>
-                        </select>
-
-                      </div>
-                    </div>
-
                   </div>
                 </div>
+
                 <div class="col-lg-6 bg-indigo text-white">
                   <div class="p-5">
                     <h3 class="fw-normal mb-5">Additional Info</h3>
 
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea2">Address</label>
+                        <input type="text" id="address" class="form-control form-control-lg" />
+                        <label class="form-label" for="address">Address</label>
                       </div>
                     </div>
 
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea3" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea3">Street Name + House number</label>
+                        <input type="text" id="housenum" class="form-control form-control-lg" />
+                        <label class="form-label" for="housenum">Street Name + House number</label>
                       </div>
                     </div>
 
@@ -151,16 +142,16 @@
                       <div class="col-md-5 mb-4 pb-2">
 
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea4" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea4">Sitio</label>
+                          <input type="text" id="sitio" class="form-control form-control-lg" />
+                          <label class="form-label" for="sitio">Sitio</label>
                         </div>
 
                       </div>
                       <div class="col-md-7 mb-4 pb-2">
 
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea5" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea5">Purok</label>
+                          <input type="text" id="purok" class="form-control form-control-lg" />
+                          <label class="form-label" for="purok">Purok</label>
                         </div>
 
                       </div>
@@ -168,8 +159,8 @@
 
                     <div class="mb-4 pb-2">
                       <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea6" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea6">E-mail (optional)</label>
+                        <input type="text" id="email" class="form-control form-control-lg" />
+                        <label class="form-label" for="email">E-mail (optional)</label>
                       </div>
                     </div>
 
@@ -177,31 +168,24 @@
                       <div class="col-md-5 mb-4 pb-2">
 
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea7" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea7">Phone number</label>
+                          <input type="text" id="phonenum" class="form-control form-control-lg" />
+                          <label class="form-label" for="phonenum">Phone number</label>
                         </div>
 
                       </div>
                       <div class="col-md-7 mb-4 pb-2">
 
                         <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea8" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea8">Additional phone number</label>
+                          <input type="text" id="enumber" class="form-control form-control-lg" />
+                          <label class="form-label" for="enumber">Emergency phone number</label>
                         </div>
 
-                      </div>
-                    </div>
-
-                    <div class="mb-4">
-                      <div class="form-outline form-white">
-                        <input type="text" id="form3Examplea9" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Examplea9">Registration date</label>
                       </div>
                     </div>
 
                     <div class="form-check d-flex justify-content-start mb-4 pb-3">
-                      <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
-                      <label class="form-check-label text-white" for="form2Example3">
+                      <input class="form-check-input me-3" type="checkbox" value="" id="termscheck" />
+                      <label class="form-check-label text-white" for="termscheck">
                         I do accept the <a href="terms-conditions.html" class="text-white"><u>Terms and
                             Conditions</u></a> of your
                         site.
@@ -422,7 +406,7 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script type="text/javascript">
-    
+
     // Import the Supabase client
 
     // Replace 'YOUR_SUPABASE_URL' and 'YOUR_SUPABASE_KEY' with your Supabase project URL and API key
@@ -454,8 +438,13 @@
     checkConnection();
 
     async function add() {
-      let username = document.getElementById("firstname").value;
-      let password = document.getElementById("lastname").value;
+      let username = document.getElementById("username").value;
+      if (document.getElementById("pass").value == document.getElementById("cpass").value){
+        let password = document.getElementById("pass").value;
+      }
+      else(){
+        alert("Password did not match!")
+      }
       console.log(username)
       const { data, error } = await database
         .from('testing')
