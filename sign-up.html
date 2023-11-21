@@ -430,7 +430,7 @@
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6eWlxem1ka29jcHVtZ3V0dHpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Mzc5OTMsImV4cCI6MjAxNjExMzk5M30.-JNHzAkpBh_EN99ZiYGbu1q4ZsRSE3WapgBRMPrkiZs';
 
     // Create a Supabase client
-    const database = createClient(supabaseUrl, supabaseKey);
+    const database = supabase.createClient(supabaseUrl, supabaseKey);
 
     // Function to check the connection status and show an alert
     async function checkConnection() {
