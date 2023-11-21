@@ -430,13 +430,13 @@
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6eWlxem1ka29jcHVtZ3V0dHpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Mzc5OTMsImV4cCI6MjAxNjExMzk5M30.-JNHzAkpBh_EN99ZiYGbu1q4ZsRSE3WapgBRMPrkiZs';
 
     // Create a Supabase client
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    const database = supabase.createClient(supabaseUrl, supabaseKey);
 
     // Function to check the connection status and show an alert
     async function checkConnection() {
       try {
         // Try to make a request to Supabase to check the connection
-        const { data, error } = await supabase.from('testing').select();
+        const { data, error } = await database.from('testing').select();
 
         // If there's an error, log it
         if (error) {
@@ -457,7 +457,7 @@
     let password = document.getElementById("lastname").value;
     async function add() {
 
-      const { data, error } = await supabase
+      const { data, error } = await database
         .from('testing')
         .insert([
           { username: username, password: password },
