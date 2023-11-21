@@ -444,9 +444,10 @@
       if (apass == bpass){
         let password = document.getElementById("pass").value;
       }
-      else(){
-        alert('Password did not match!');
+      else {
+        alert("Password did not match!");
       }
+      
       console.log(username)
       const { data, error } = await database
         .from('testing')
@@ -454,7 +455,7 @@
           { username: username, password: password },
         ])
 
-      alert('New User Created!');
+      alert("New User Created!");
 
     }
   </script>
