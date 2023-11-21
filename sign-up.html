@@ -454,7 +454,7 @@
     checkConnection();
 
     async function add() {
-      let username = document.getElementsById("firstname").value;
+      let username = document.getElementById("firstname").value;
       let password = document.getElementById("lastname").value;
       console.log(username)
       const { data, error } = await database
