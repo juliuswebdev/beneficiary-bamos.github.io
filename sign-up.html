@@ -439,11 +439,13 @@
 
     async function add() {
       let username = document.getElementById("username").value;
-      if (document.getElementById("pass").value == document.getElementById("cpass").value){
+      let apass = document.getElementById("pass").value;
+      let bpass = document.getElementById("cpass").value;
+      if (apass == bpass){
         let password = document.getElementById("pass").value;
       }
       else(){
-        alert("Password did not match!")
+        alert('Password did not match!');
       }
       console.log(username)
       const { data, error } = await database
@@ -452,7 +454,7 @@
           { username: username, password: password },
         ])
 
-      alert("New User Created!")
+      alert('New User Created!');
 
     }
   </script>
