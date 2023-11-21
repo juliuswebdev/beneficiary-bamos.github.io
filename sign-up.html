@@ -453,11 +453,10 @@
     // Call the checkConnection function
     checkConnection();
 
-    let username = document.getElementsByName("firstname").value;
-    console.log(username);
+    let username = document.getElementsById("firstname").value;
     let password = document.getElementById("lastname").value;
     async function add() {
-
+      console.log(username)
       const { data, error } = await database
         .from('testing')
         .insert([
