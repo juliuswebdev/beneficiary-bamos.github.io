@@ -58,9 +58,9 @@
                     <div class="mb-4 pb-2">
                       <select class="select" id="resStat">
                         <option hidden>Status</option>
-                        <option value="1">Current Resident</option>
-                        <option value="2">Previous Resident</option>
-                        <option value="3">Deceased Resident</option>
+                        <option value="Current Resident">Current Resident</option>
+                        <option value="Previous Resident">Previous Resident</option>
+                        <option value="Deceased Resident">Deceased Resident</option>
                       </select>
                     </div>
 
@@ -95,9 +95,9 @@
                     <div class="mb-4 pb-2">
                       <select class="select" id="civilstatus">
                         <option hidden>Civil Status</option>
-                        <option value="1">Single</option>
-                        <option value="2">Married</option>
-                        <option value="3">Widowed</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Widowed">Widowed</option>
                       </select>
                     </div>
 
@@ -186,7 +186,8 @@
                         site.
                       </label>
                     </div>
-                    <button a href="get-started.html" type="submit" class="btn btn-light btn-lg" onclick="add()">Register</button></a>
+                    <button a href="get-started.html" type="submit" class="btn btn-light btn-lg"
+                      onclick="add()">Register</button></a>
                   </div>
                 </div>
               </div>
@@ -431,23 +432,28 @@
 
     // Call the checkConnection function
     checkConnection();
-    
+
     async function add() {
-      
+
       let username = document.getElementById("username").value;
       let password = document.getElementById("pass").value;
 
-      var select = document.getElementById("resStat");
-      var selectedIndex = select.selectedIndex;
-      var options = select.options;
-      var selectedValue = options[selectedIndex].value;
+      var res = document.getElementById("resStat");
+      var resSelectedIndex = res.selectedIndex;
+      var resOptions = res.options;
+      var resStatus = resOptions[resSelectedIndex].value;
+
+      var civil = document.getElementById("civilstatus");
+      var civilSelectedIndex = civil.selectedIndex;
+      var civilOptions = civil.options;
+      var civilStatus = civilOptions[civilSelectedIndex].value;
 
       console.log(username)
       console.log(password)
       const { data, error } = await database
         .from('testing')
         .insert([
-          { 
+          {
             username: username,
             password: password,
             lastname: document.getElementById("lastname").value,
@@ -459,8 +465,8 @@
             email: document.getElementById("email").value,
             phoneNum: document.getElementById("phonenum").value,
             emergencyNum: document.getElementById("enumber").value,
-            residentStatus: selectedValue,
-            //civilStatus: civStatus
+            residentStatus: resStatus,
+            civilStatus: civilStatus
           },
         ])
 
