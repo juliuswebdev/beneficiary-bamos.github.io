@@ -436,8 +436,11 @@
       
       let username = document.getElementById("username").value;
       let password = document.getElementById("pass").value;
-      let resStatus = document.getElementById("resStat").options.selected.text;
-      let civStatus = document.getElementById("civilstatus").options.selected.text;
+
+      var select = document.getElementById("resStat");
+      var selectedIndex = select.selectedIndex;
+      var options = select.options;
+      var selectedValue = options[selectedIndex].value;
 
       console.log(username)
       console.log(password)
@@ -456,8 +459,8 @@
             email: document.getElementById("email").value,
             phoneNum: document.getElementById("phonenum").value,
             emergencyNum: document.getElementById("enumber").value,
-            residentStatus: resStatus,
-            civilStatus: civStatus
+            residentStatus: selectedValue,
+            //civilStatus: civStatus
           },
         ])
 
