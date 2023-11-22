@@ -71,7 +71,7 @@
   
                 <p><a href="forgot-pass.html">Forgot password?</a></p>
   
-                <a href="registration-form1.html" class="btn btn-outline-light btn-lg px-5" type="submit">Login</a>
+                <button class="btn btn-outline-light btn-lg px-5" type="submit" onclick="login"><span id="verifyLink">Login</span></button>
 
                 <div class="d-flex justify-content-center text-center mt-4 pt-1">
                   <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
@@ -163,5 +163,67 @@ div.card{
 }
 
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="text/javascript">
+
+    // Import the Supabase client
+
+    // Replace 'YOUR_SUPABASE_URL' and 'YOUR_SUPABASE_KEY' with your Supabase project URL and API key
+    const supabaseUrl = 'https://hzyiqzmdkocpumguttzb.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6eWlxem1ka29jcHVtZ3V0dHpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Mzc5OTMsImV4cCI6MjAxNjExMzk5M30.-JNHzAkpBh_EN99ZiYGbu1q4ZsRSE3WapgBRMPrkiZs';
+
+    // Create a Supabase client
+    const database = supabase.createClient(supabaseUrl, supabaseKey);
+
+    // Function to check the connection status and show an alert
+    async function checkConnection() {
+      try {
+        // Try to make a request to Supabase to check the connection
+        const { data, error } = await database.from('testing').select();
+
+        // If there's an error, log it
+        if (error) {
+          console.error('Error connection! Please try again.', error.message);
+        } else {
+          // If successful, show an alert
+          alert('Connection secured!');
+        }
+      } catch (error) {
+        console.error('Error:', error.message);
+      }
+    }
+    checkConnection();
+
+    async function login(){
+      let user = document.getElementById("userPhone").value;
+      let pass = document.getElementById("typePasswordX").value;
+
+      const verifyUser = await database.from("testing").select("phoneNum");
+      const verifyPass = await database.from("testing").select("password");
+
+      if (user == "admin"){
+        if (pass == "admin"){
+          var link = document.getElementById("verifyLink").innerHTML("BAMOS-DASHBOARD/template/bamos-dashb-welcome-page.html");
+        }
+        else{
+          alert("Incorrect credentials! Please log in again.");
+        }
+      }
+      else if (user == verifyUser){
+        if (pass == verifyPass){
+          alert("User is available in the database!");
+        }
+        else{
+          alert("Incorrect credentials! Please log in again.");
+        }
+      }
+      else{
+        alert("User not found! Try signing up instead.");
+
+      }
+
+    }
+    </script>
+
 
 </html> 
