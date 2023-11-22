@@ -186,7 +186,7 @@
                         site.
                       </label>
                     </div>
-                    <button type="submit" class="btn btn-light btn-lg" onclick="add()">Register</button>
+                    <button a href="get-started.html" type="submit" class="btn btn-light btn-lg" onclick="add()">Register</button></a>
                   </div>
                 </div>
               </div>
@@ -442,7 +442,21 @@
       const { data, error } = await database
         .from('testing')
         .insert([
-          { username: username, password: password },
+          { 
+            username: username,
+            password: password,
+            lastname: document.getElementById("lastname").value,
+            firstname: document.getElementById("firstname").value,
+            middlename: document.getElementById("middlename").value,
+            birthDate: document.getElementById("birthdate").value,
+            sitio: document.getElementById("sitio").value,
+            purok: document.getElementById("purok").value,
+            email: document.getElementById("email").value,
+            phoneNum: document.getElementById("phonenum").value,
+            emergencyNum: document.getElementById("enumber").value,
+            residentStatus: document.getElementById("resStat").value,
+            civilStatus: document.getElementById("civilstatus").value
+          },
         ])
 
       alert("New User Created!");
