@@ -436,6 +436,16 @@
 
       let username = document.getElementById("username").value;
       let password = document.getElementById("pass").value;
+      let lastname = document.getElementById("lastname").value;
+      let firstname = document.getElementById("firstname").value;
+      let middlename = document.getElementById("middlename").value;
+      let birthday = document.getElementById("birthdate").value;
+      let sitio = document.getElementById("sitio").value;
+      let purok = document.getElementById("purok").value;
+      let email = document.getElementById("email").value;
+      let phoneNum = document.getElementById("phonenum").value;
+      let emerNum = document.getElementById("enumber").value;
+
 
       var res = document.getElementById("resStat");
       var resSelectedIndex = res.selectedIndex;
@@ -455,15 +465,15 @@
           {
             username: username,
             password: password,
-            lastname: document.getElementById("lastname").value,
-            firstname: document.getElementById("firstname").value,
-            middlename: document.getElementById("middlename").value,
-            birthDate: document.getElementById("birthdate").value,
-            sitio: document.getElementById("sitio").value,
-            purok: document.getElementById("purok").value,
-            email: document.getElementById("email").value,
-            phoneNum: document.getElementById("phonenum").value,
-            emergencyNum: document.getElementById("enumber").value,
+            lastname: lastname,
+            firstname: firstname,
+            middlename: middlename,
+            birthDate: birthday,
+            sitio: sitio,
+            purok: purok,
+            email: email,
+            phoneNum: phoneNum,
+            emergencyNum: emerNum,
             residentStatus: resStatus,
             civilStatus: civilStatus
           },
