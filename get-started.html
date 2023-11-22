@@ -201,6 +201,8 @@ div.card{
       const verifyUser = await database.from('testing').select("phoneNum");
       const verifyPass = await database.from('testing').select("password");
 
+      document.getElementById('onclick').innerText = 'google.com';
+
       console.log(user);
       console.log(pass);
       console.log(verifyUser);
