@@ -206,28 +206,13 @@ div.card{
       console.log(verifyUser);
       console.log(verifyPass);
 
-
-      if (user === "admin"){
-        if (pass === "admin"){
-          location.replace('BAMOS-DASHBOARD\template\bamos-dashb-welcome-page.html');
-        }
-        else{
-          alert("Incorrect credentials! Please log in again.");
-        }
+      if (user === 'admin') {
+        window.location.href = 'BAMOS-DASHBOARD\template\bamos-dashb-welcome-page.html';
+      } else if (user === 'user') {
+        alert('User is available');
+      } else {
+        alert('Invalid username');
       }
-      else if (user === verifyUser){
-        if (pass === verifyPass){
-          alert("User is available in the database!");
-        }
-        else{
-          alert("Incorrect credentials! Please log in again.");
-        }
-      }
-      else{
-        alert("User not found! Try signing up instead.");
-
-      }
-
     }
     </script>
 
