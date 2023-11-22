@@ -436,6 +436,8 @@
       
       let username = document.getElementById("username").value;
       let password = document.getElementById("pass").value;
+      let resStatus = document.getElementById("resStat").options.text;
+      let civStatus = document.getElementById("civilstatus").options.value;
 
       console.log(username)
       console.log(password)
@@ -454,8 +456,8 @@
             email: document.getElementById("email").value,
             phoneNum: document.getElementById("phonenum").value,
             emergencyNum: document.getElementById("enumber").value,
-            residentStatus: document.getElementById("resStat").value,
-            civilStatus: document.getElementById("civilstatus").value
+            residentStatus: resStatus,
+            civilStatus: civStatus
           },
         ])
 
