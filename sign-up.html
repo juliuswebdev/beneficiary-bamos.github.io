@@ -436,9 +436,8 @@
 
     // Call the checkConnection function
     checkConnection();
-
-    async function add() {
-      let username = document.getElementById("username").value;
+    
+    let username = document.getElementById("username").value;
       let apass = document.getElementById("pass").value;
       let bpass = document.getElementById("cpass").value;
       if (apass == bpass){
@@ -447,8 +446,10 @@
       else {
         alert("Password did not match!");
       }
-      
+
+    async function add() {
       console.log(username)
+      console.log(password)
       const { data, error } = await database
         .from('testing')
         .insert([
