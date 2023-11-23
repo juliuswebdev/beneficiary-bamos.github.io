@@ -203,7 +203,7 @@
         <div>
           <div class="column">
             <button>Clear Form</button>
-            <button type="button"><a href="registration-form2.html">Next</a></button>
+            <button type="button" onclick="add()"><a href="registration-form2.html">Next</a></button>
             </div>
       </form>
     </section>
@@ -341,4 +341,77 @@ body {
   }
 }
 </style>
+<script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="text/javascript">
+
+  // Import the Supabase client
+
+  // Replace 'YOUR_SUPABASE_URL' and 'YOUR_SUPABASE_KEY' with your Supabase project URL and API key
+  const supabaseUrl = 'https://hzyiqzmdkocpumguttzb.supabase.co';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6eWlxem1ka29jcHVtZ3V0dHpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Mzc5OTMsImV4cCI6MjAxNjExMzk5M30.-JNHzAkpBh_EN99ZiYGbu1q4ZsRSE3WapgBRMPrkiZs';
+
+  // Create a Supabase client
+  const database = supabase.createClient(supabaseUrl, supabaseKey);
+
+  // Function to check the connection status and show an alert
+  async function checkConnection() {
+    try {
+      // Try to make a request to Supabase to check the connection
+      const { data, error } = await database.from('additionalInfo').select();
+
+      // If there's an error, log it
+      if (error) {
+        console.error('Error connection! Please try again.', error.message);
+      } else {
+        // If successful, show an alert
+        alert('Connection secured!');
+      }
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
+  }
+
+  // Call the checkConnection function
+  checkConnection();
+
+async function add(){
+  lead();
+}
+
+  async function lead(){
+    let name = document.getElementById('fullname').value;
+    let address = document.getElementById('completeAdd').value;
+    let relate = document.getElementById('relation').value;
+    let houseNum = document.getElementById('houseNum').value;
+    let birthD = document.getElementById('birthD').value;
+
+    var gender = document.getElementById("gen");
+      var genderSelect = gender.selectedIndex;
+      var genderOpt = gender.options;
+      var genderStatus = genderOpt[genderSelect].value;
+
+      const { data, error } = await database
+        .from('additionalInfo')
+        .insert([
+          {
+            representative: name,
+            relation: relate,
+            address: address,
+            houseNum: houseNum,
+            birthDate: birthD,
+            gender: genderStatus
+          },
+        ])
+        alert("Insert successful!")
+  }
+  </script>
 </html>
