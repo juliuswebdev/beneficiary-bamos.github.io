@@ -44,15 +44,11 @@
         <div class="gender-box">
           <h3>Gender</h3>
           <div class="gender-option">
-            <div class="gender">
+            <div class="gender" id="gen">
               <input type="radio" id="check-male" name="gender" value="Male"/>
               <label for="check-male">Male</label>
-            </div>
-            <div class="gender">
               <input type="radio" id="check-female" name="gender" value="Female"/>
               <label for="check-female">Female</label>
-            </div>
-            <div class="gender">
               <input type="radio" id="check-other" name="gender" value="Prefer not to say"/>
               <label for="check-other">Prefer not to say</label>
             </div>
@@ -62,9 +58,9 @@
           <label>Family members</label>
           <input type="text" placeholder="Member 1"/>
           <div class="column">
-            <input type="date" placeholder="Date of birth"/>
-            <input type="number" placeholder="Age"/>
-            <input type="text" placeholder="Relationship to the member"/>
+            <input type="date" placeholder="Date of birth" id="bday"/>
+            <input type="number" placeholder="Age" id="age"/>
+            <input type="text" placeholder="Relationship to the member" id="relations"/>
             <div class="select-box">
               <select id="civilStat">
                 <option hidden>Civil Status</option>
@@ -75,9 +71,9 @@
             </div>        
           </div>
           <div class="column">
-            <input type="text" placeholder="Religion"/>
-            <input type="text" placeholder="Educational Attainment"/>
-            <input type="text" placeholder="Source of income/Work"/>
+            <input type="text" placeholder="Religion" id="religion"/>
+            <input type="text" placeholder="Educational Attainment" id="edAttain"/>
+            <input type="text" placeholder="Source of income/Work" id="sourceIncome"/>
             <div class="select-box">
               <select>
                 <option hidden>Gender</option>
@@ -143,88 +139,6 @@
           <br>
           <br>
           <input type="text" placeholder="Member 3"/>
-          <div class="column">
-            <input type="date" placeholder="Date of birth"/>
-            <input type="number" placeholder="Age"/>
-            <input type="text" placeholder="Relationship to the member"/>
-            <div class="select-box">
-              <select id="civilStat">
-                <option hidden>Civil Status</option>
-                <option value="Single">Single</option>
-                <option value="Married">Married</option>
-                <option value="Widowed">Widowed</option>
-              </select>
-            </div>        
-          </div>
-          <div class="column">
-            <input type="text" placeholder="Religion"/>
-            <input type="text" placeholder="Educational Attainment"/>
-            <input type="text" placeholder="Source of income/Work"/>
-            <div class="select-box">
-              <select>
-                <option hidden>Gender</option>
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-                <option value="Prefer not to say">Prefer not to say</option>
-              </select>
-            </div>        
-          </div>
-          <div class="column">
-            <input type="number" placeholder="Years of staying in the area" />
-            <input type="text" placeholder="Philhealth(optional)"/>
-            <div class="select-box">
-              <select>
-                <option hidden>Monthly income</option>
-                <option value="5k-10k">5k-10k</option>
-                <option value="15k-25k">15k-25k</option>
-                <option value="30k+">30k+</option>
-              </select>
-            </div>        
-          </div>
-          <br>
-          <br>
-          <input type="text" placeholder="Member 4"/>
-          <div class="column">
-            <input type="date" placeholder="Date of birth"/>
-            <input type="number" placeholder="Age"/>
-            <input type="text" placeholder="Relationship to the member"/>
-            <div class="select-box">
-              <select id="civilStat">
-                <option hidden>Civil Status</option>
-                <option value="Single">Single</option>
-                <option value="Married">Married</option>
-                <option value="Widowed">Widowed</option>
-              </select>
-            </div>        
-          </div>
-          <div class="column">
-            <input type="text" placeholder="Religion"/>
-            <input type="text" placeholder="Educational Attainment"/>
-            <input type="text" placeholder="Source of income/Work"/>
-            <div class="select-box">
-              <select>
-                <option hidden>Gender</option>
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-                <option value="Prefer not to say">Prefer not to say</option>
-              </select>
-            </div>        
-          </div>
-          <div class="column">
-            <input type="number" placeholder="Years of staying in the area" />
-            <input type="text" placeholder="Philhealth(optional)"/>
-            <div class="select-box">
-              <select>
-                <option hidden>Monthly income</option>
-                <option value="5k-10k">5k-10k</option>
-                <option value="15k-25k">15k-25k</option>
-                <option value="30k+">30k+</option>
-              </select>
-            </div>        
-          </div>
-          <br>
-          <br>
-          <input type="text" placeholder="Member 5"/>
           <div class="column">
             <input type="date" placeholder="Date of birth"/>
             <input type="number" placeholder="Age"/>
