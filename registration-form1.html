@@ -366,7 +366,7 @@ body {
   async function checkConnection() {
     try {
       // Try to make a request to Supabase to check the connection
-      const { data, error } = await database.from('additionalInfo').select();
+      const { data, error } = await database.from('addInfo').select();
 
       // If there's an error, log it
       if (error) {
@@ -400,7 +400,7 @@ async function add(){
       var genderStatus = genderOpt[genderSelect].value;
 
       const { data, error } = await database
-        .from('additionalInfo')
+        .from('addInfo')
         .insert([
           {
             representative: name,
