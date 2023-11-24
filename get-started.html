@@ -74,7 +74,7 @@
                 <p><a href="forgot-pass.html">Forgot password?</a></p>
 
                 <button class="btn btn-outline-light btn-lg px-5" type="submit"
-                  onclick="verify()">Login</button>
+                  onclick="redirectToPage()">Login</button>
 
                 <div class="d-flex justify-content-center text-center mt-4 pt-1">
                   <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
@@ -210,11 +210,12 @@
     }
   }
 
-  async function getUserByUsername(username) {
+  async function getUserByUsername(username, passwordInput) {
     const { data, error } = await database
       .from('testing')
       .select('phoneNum', 'password') // Add the columns you want to retrieve
       .eq(username, passwordInput)
+      .single()
 
     if (error) {
       console.error('Error fetching user:', error.message);
@@ -225,8 +226,8 @@
   }
 
   async function verify() {
-    const usernameInput = document.getElementById('userPhone').value;
-    const passwordInput = document.getElementById('typePasswordX').value;
+    const usernameInput = document.getElementById('userPhone').text;
+    const passwordInput = document.getElementById('typePasswordX').text;
     const userData = await getUserByUsername(usernameInput);
 
     if (userData && userData.username === usernameInput && userData.password === passwordInput) {
