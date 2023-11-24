@@ -194,15 +194,16 @@ div.card{
     }
     checkConnection();
     
-      function redirectToPage() {
+      async function redirectToPage() {
       // Get the input value
       const usernameInput = document.getElementById('userPhone').value;
       const username = usernameInput.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+      const verify = await database.from('testing').select(phoneNum).eq('phoneNum', username);
 
       // Check the username and redirect accordingly
       if (username === 'admin') {
         window.location.href = 'registration-form1.html';
-      } else if (username === 'user') {
+      } else if (username === verify) {
         window.location.href = 'registration-form2.html';
       } else {
         alert('Invalid username. Please enter "admin" or "user".');
