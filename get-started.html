@@ -199,7 +199,7 @@
   async function redirectToPage() {
     // Get the input value
     const usernameInput = document.getElementById('userPhone').value;
-    //const username = usernameInput.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+    const username = usernameInput.toLowerCase(); // Convert to lowercase for case-insensitive comparison
     const { data, error } = await database.from('testing').select().eq('phoneNum', usernameInput);
 
     // Check the username and redirect accordingly
