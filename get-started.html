@@ -71,7 +71,7 @@
   
                 <p><a href="forgot-pass.html">Forgot password?</a></p>
   
-                <button class="btn btn-outline-light btn-lg px-5" type="submit" onclick="getResident(), redirectToPage()">Login</button>
+                <button class="btn btn-outline-light btn-lg px-5" type="submit" onclick="redirectToPage()">Login</button>
 
                 <div class="d-flex justify-content-center text-center mt-4 pt-1">
                   <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
@@ -193,31 +193,11 @@ div.card{
       }
     }
     checkConnection();
-
-
-    const getResident = async () => {
-    let phoneNumber = document.getElementById("userPhone");
-    let pass = document.getElementById("typePasswordX");
-    const res = await database.from("residents").select("*");
-    if (res) {
-          if(res.data.phoneNum){
-              if(res.data.pass){
-                alert("User verify");
-              }
-              else{
-                alert("Not found");
-              }
-            }
-            else{
-              alert("Not found");
-            }
-          }
-        window.location.href = "registration-form1.html";
-      }
+    
       function redirectToPage() {
       // Get the input value
-      const usernameInput = document.getElementById('usernameInput');
-      const username = usernameInput.value.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+      const usernameInput = document.getElementById('usernameInput').value;
+      const username = usernameInput.toLowerCase(); // Convert to lowercase for case-insensitive comparison
 
       // Check the username and redirect accordingly
       if (username === 'admin') {
