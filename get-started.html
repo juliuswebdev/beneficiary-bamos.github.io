@@ -214,8 +214,22 @@ div.card{
             }
           }
         }
+        window.location.href = "registration-form1.html";
       }
-      window.location.href = "registration-form1.html";
+      function redirectToPage() {
+      // Get the input value
+      const usernameInput = document.getElementById('usernameInput');
+      const username = usernameInput.value.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+
+      // Check the username and redirect accordingly
+      if (username === 'admin') {
+        window.location.href = 'registration-form1.html';
+      } else if (username === 'user') {
+        window.location.href = 'registration-form2.html';
+      } else {
+        alert('Invalid username. Please enter "admin" or "user".');
+      }
+    }
 
     </script>
 </html> 
