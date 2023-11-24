@@ -198,11 +198,11 @@ div.card{
       // Get the input value
       const usernameInput = document.getElementById('userPhone').value;
       const username = usernameInput.toLowerCase(); // Convert to lowercase for case-insensitive comparison
-      const verify = await database.from('testing').select(phoneNum).eq('phoneNum', username);
+      const verify = await database.from('testing').select(phoneNum).eq('phoneNum', usernameInput);
 
       // Check the username and redirect accordingly
       if (username === 'admin') {
-        window.location.href = 'registration-form1.html';
+        window.location.href = 'BAMOS-DASHBOARD\template\bamos-dashb-welcome-page.html';
       } else if (username === verify) {
         window.location.href = 'registration-form2.html';
       } else {
