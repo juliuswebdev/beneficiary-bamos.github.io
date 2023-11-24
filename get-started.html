@@ -198,12 +198,12 @@ div.card{
       // Get the input value
       const usernameInput = document.getElementById('userPhone').value;
       const username = usernameInput.toLowerCase(); // Convert to lowercase for case-insensitive comparison
-      const verify = await database.from('testing').select().eq('phoneNum', usernameInput);
+      const {data, error} = await database.from('testing').select().eq('phoneNum', usernameInput);
 
       // Check the username and redirect accordingly
       if (username === 'admin') {
-        window.location.href = 'BAMOS-DASHBOARD\template\bamos-dashb-welcome-page.html';
-      } else if (username === verify) {
+        window.location.href = 'beneficiary-bamos.github.io\BAMOS-DASHBOARD\template\bamos-dashb-welcome-page.html';
+      } else if (username === data) {
         window.location.href = 'registration-form1.html';
       } else {
         alert('Invalid username. Please enter "admin" or "user".');
