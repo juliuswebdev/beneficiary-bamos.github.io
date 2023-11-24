@@ -213,8 +213,8 @@
   async function getUserByUsername(username) {
     const { data, error } = await database
       .from('testing')
-      .select('phoneNum') // Add the columns you want to retrieve
-      .eq(username)
+      .select('phoneNum', 'password') // Add the columns you want to retrieve
+      .eq(username, passwordInput)
 
     if (error) {
       console.error('Error fetching user:', error.message);
