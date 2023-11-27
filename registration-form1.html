@@ -32,7 +32,23 @@
       <div class="column">
         <div class="input-box">
           <label>Family Relationship</label>
-          <input type="text" placeholder="" id="relation" required />
+          <select id="relations" class="select-box" required>
+            <option hidden>You are the...</option>
+            <option value="GrandMother">GrandMother</option>
+            <option value="GrandFather">GrandFather</option>
+            <option value="Mother">Mother</option>
+            <option value="Father">Father</option>
+            <option value="Husband">Husband</option>
+            <option value="Wife">Wife</option>
+            <option value="Son">Son</option>
+            <option value="Daughter">Daughter</option>
+            <option value="Uncle">Uncle</option>
+            <option value="Auntie">Auntie</option>
+            <option value="Nephew">Nephew</option>
+            <option value="Niece">Niece</option>
+            <option value="Grandchild">Grandchild</option>
+            <option value="Cousin">Cousin</option>
+          </select>
         </div>
 
         <div class="input-box">
@@ -123,114 +139,163 @@
         </div>
         <br>
         <br>
-        <input type="text" placeholder="Member 2" id="member2" />
-        <div class="column">
-          <input type="date" placeholder="Date of birth" id="bday2" />
-          <input type="number" placeholder="Age" id="age2" />
-          <input type="text" placeholder="Relationship to the member" id="relations2" />
-          <div class="select-box">
-            <select id="civilStat2">
-              <option hidden>Civil Status</option>
-              <option value="Single2">Single</option>
-              <option value="Married2">Married</option>
-              <option value="Widowed2">Widowed</option>
+        <div class="input-box member">
+          <label>Family members</label>
+          <input type="text" placeholder="Member 2" id="member2" />
+          <div class="column">
+            <input type="date" placeholder="Date of birth" id="bday2" />
+            <input type="number" placeholder="Age" id="age2" />
+            <select id="relation2" class="select-box">
+              <option hidden>Member Relation</option>
+              <option value="GrandMother">GrandMother</option>
+              <option value="GrandFather">GrandFather</option>
+              <option value="Mother">Mother</option>
+              <option value="Father">Father</option>
+              <option value="Husband">Husband</option>
+              <option value="Wife">Wife</option>
+              <option value="Son">Son</option>
+              <option value="Daughter">Daughter</option>
+              <option value="Uncle">Uncle</option>
+              <option value="Auntie">Auntie</option>
+              <option value="Nephew">Nephew</option>
+              <option value="Niece">Niece</option>
+              <option value="Grandchild">Grandchild</option>
+              <option value="Cousin">Cousin</option>
             </select>
+            <div class="select-box">
+              <select id="civilStat2">
+                <option hidden>Civil Status</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Widowed">Widowed</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="column">
-          <input type="text" placeholder="Religion" id="religion2" />
-          <input type="text" placeholder="Educational Attainment" id="edAttain2" />
-          <input type="text" placeholder="Source of income/Work" id="sourceIncome2" />
-          <div class="select-box">
-            <select id="genderPick2">
-              <option hidden>Gender</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-              <option value="Prefer not to say">Prefer not to say</option>
+          <div class="column">
+            <input type="text" placeholder="Religion" id="religion2" />
+            <select id="edAttain2" class="select-box">
+              <option hidden>Educational Attainment</option>
+              <option value="Elementary">Elementary</option>
+              <option value="JuniorHigh">JuniorHigh</option>
+              <option value="SeniorHigh">SeniorHigh</option>
+              <option value="College">College</option>
             </select>
+            <input type="text" placeholder="Source of income/Work" id="sourceIncome2" />
+            <div class="select-box">
+              <select id="genderPick2">
+                <option hidden>Gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="column">
-          <input type="number" placeholder="Years of staying in the area" id="stay2" />
-          <input type="text" placeholder="Philhealth(optional)" id="philId2" />
-          <div class="select-box">
-            <select id="incomePick2">
-              <option hidden>Monthly income</option>
-              <option value="5k-10k">5k-10k</option>
-              <option value="15k-25k">15k-25k</option>
-              <option value="30k+">30k+</option>
-            </select>
+          <div class="column">
+            <input type="number" placeholder="Years of staying in the area" id="stay2" />
+            <input type="text" placeholder="Philhealth(optional)" id="philId2" />
+            <div class="select-box">
+              <select id="incomePick2">
+                <option hidden>Monthly income</option>
+                <option value="5k-10k">5k-10k</option>
+                <option value="15k-25k">15k-25k</option>
+                <option value="30k+">30k+</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <br>
-        <br><input type="text" placeholder="Member 3" id="member3" />
-        <div class="column">
-          <input type="date" placeholder="Date of birth" id="bday3" />
-          <input type="number" placeholder="Age" id="age3" />
-          <input type="text" placeholder="Relationship to the member" id="relations3" />
-          <div class="select-box">
-            <select id="civilStat3">
-              <option hidden>Civil Status</option>
-              <option value="Single">Single</option>
-              <option value="Married">Married</option>
-              <option value="Widowed">Widowed</option>
-            </select>
+          <br>
+          <br>
+          <div class="input-box member">
+            <label>Family members</label>
+            <input type="text" placeholder="Member 3" id="member3" />
+            <div class="column">
+              <input type="date" placeholder="Date of birth" id="bday3" />
+              <input type="number" placeholder="Age" id="age3" />
+              <select id="relation3" class="select-box">
+                <option hidden>Member Relation</option>
+                <option value="GrandMother">GrandMother</option>
+                <option value="GrandFather">GrandFather</option>
+                <option value="Mother">Mother</option>
+                <option value="Father">Father</option>
+                <option value="Husband">Husband</option>
+                <option value="Wife">Wife</option>
+                <option value="Son">Son</option>
+                <option value="Daughter">Daughter</option>
+                <option value="Uncle">Uncle</option>
+                <option value="Auntie">Auntie</option>
+                <option value="Nephew">Nephew</option>
+                <option value="Niece">Niece</option>
+                <option value="Grandchild">Grandchild</option>
+                <option value="Cousin">Cousin</option>
+              </select>
+              <div class="select-box">
+                <select id="civilStat3">
+                  <option hidden>Civil Status</option>
+                  <option value="Single">Single</option>
+                  <option value="Married">Married</option>
+                  <option value="Widowed">Widowed</option>
+                </select>
+              </div>
+            </div>
+            <div class="column">
+              <input type="text" placeholder="Religion" id="religion3" />
+              <select id="edAttain3" class="select-box">
+                <option hidden>Educational Attainment</option>
+                <option value="Elementary">Elementary</option>
+                <option value="JuniorHigh">JuniorHigh</option>
+                <option value="SeniorHigh">SeniorHigh</option>
+                <option value="College">College</option>
+              </select>
+              <input type="text" placeholder="Source of income/Work" id="sourceIncome3" />
+              <div class="select-box">
+                <select id="genderPick3">
+                  <option hidden>Gender</option>
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                  <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+            <div class="column">
+              <input type="number" placeholder="Years of staying in the area" id="stay3" />
+              <input type="text" placeholder="Philhealth(optional)" id="philId3" />
+              <div class="select-box">
+                <select id="incomePick3">
+                  <option hidden>Monthly income</option>
+                  <option value="5k-10k">5k-10k</option>
+                  <option value="15k-25k">15k-25k</option>
+                  <option value="30k+">30k+</option>
+                </select>
+              </div>
+            </div>
+            <br>
+            <br>
+            <div class="column">
+              <div class="select-box">
+                <select id="sitio">
+                  <option hidden>Sitio</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div class="select-box">
+                <select id="purok">
+                  <option hidden>Purok</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+            <br>
           </div>
-        </div>
-        <div class="column">
-          <input type="text" placeholder="Religion" id="religion3" />
-          <input type="text" placeholder="Educational Attainment" id="edAttain3" />
-          <input type="text" placeholder="Source of income/Work" id="sourceIncome3" />
-          <div class="select-box">
-            <select id="genderPick3">
-              <option hidden>Gender</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-              <option value="Prefer not to say">Prefer not to say</option>
-            </select>
-          </div>
-        </div>
-        <div class="column">
-          <input type="number" placeholder="Years of staying in the area" id="stay3" />
-          <input type="text" placeholder="Philhealth(optional)" id="philId3" />
-          <div class="select-box">
-            <select id="incomePick3">
-              <option hidden>Monthly income</option>
-              <option value="5k-10k">5k-10k</option>
-              <option value="15k-25k">15k-25k</option>
-              <option value="30k+">30k+</option>
-            </select>
-          </div>
-        </div>
-        <br>
-        <br>
-        <div class="column">
-          <div class="select-box">
-            <select id="sitio">
-              <option hidden>Sitio</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </div>
-          <div class="select-box">
-            <select id="purok">
-              <option hidden>Purok</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </div>
-        </div>
-        <br>
-      </div>
-      <div>
-        <div class="column">
-          <button type="button" onclick="clr()">Clear Form</button>
-          <button type="submit" onclick="add()">Next</button>
-        </div>
+          <div>
+            <div class="column">
+              <button type="button" onclick="clr()">Clear Form</button>
+              <button type="submit" onclick="add()">Next</button>
+            </div>
     </form>
   </section>
 </body>
@@ -391,15 +456,6 @@
     }
   }
 </style>
-<script>
-  function openForm() {
-    document.getElementById("myForm").style.display = "block";
-  }
-
-  function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-  }
-</script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script type="text/javascript">
 
@@ -439,7 +495,6 @@
 
   async function add() {
     let rep = document.getElementById('fullname').value;
-    let relate = document.getElementById('relation').value;
     let addMember1 = document.getElementById('member1').value;
     let addMember2 = document.getElementById('member2').value;
     let addMember3 = document.getElementById('member3').value;
@@ -449,14 +504,44 @@
     let memAge1 = document.getElementById('age').value;
     let memAge2 = document.getElementById('age2').value;
     let memAge3 = document.getElementById('age3').value;
+    let memReligion1 = document.getElementById('religion').value;
+    let memReligion2 = document.getElementById('religion2').value;
+    let memReligion3 = document.getElementById('religion3').value;
+    let memEduc1 = document.getElementById('edAttain').value;
+    let memEduc2 = document.getElementById('edAttain2').value;
+    let memEduc3 = document.getElementById('edAttain3').value;
+    let memSource1 = document.getElementById('sourceIncome').value;
+    let memSource2 = document.getElementById('sourceIncome2').value;
+    let memSource3 = document.getElementById('sourceIncome3').value;
+    let memStay1 = document.getElementById('stay').value;
+    let memStay2 = document.getElementById('stay2').value;
+    let memStay3 = document.getElementById('stay3').value;
+    let memPhilID1 = document.getElementById('philID').value;
+    let memPhilID2 = document.getElementById('philID2').value;
+    let memPhilID3 = document.getElementById('philID3').value;
 
 
     var gen = document.getElementsByName('gender');
     for (i = 0; i < gen.length; i++) {
       if (gen[i].checked) {
-
       }
     }
+
+    var res = document.getElementById("relations");
+    var resSelectedIndex = res.selectedIndex;
+    var resOptions = res.options;
+    var relate = resOptions[resSelectedIndex].value;
+    console.log(relate);
+
+    const { data, error } = await database
+        .from('addInfo')
+        .insert([
+          {
+            representative: rep,
+            gender: gen,
+            relation: relate
+          },
+        ])
 
     window.location.href = "registration-form2.html"
   }
