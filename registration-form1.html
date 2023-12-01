@@ -18,7 +18,7 @@
     <header>BAMOS FAMILY REGISTRATION FORM <br>
       <h6>BARANGAY BAHAY PARE FAMILY PROFILE</h6>
     </header>
-    <form action="#" class="form">
+    <form class="form">
       <div class="input-box">
         <label>Name</label>
         <input type="text" id="fullname" placeholder="Enter your full name" required />
@@ -32,7 +32,7 @@
       <div class="column">
         <div class="input-box">
           <label>Family Relationship</label>
-          <select id="relations" class="select-box" required>
+          <select id="relations" class="select-box">
             <option hidden>You are the...</option>
             <option value="GrandMother">GrandMother</option>
             <option value="GrandFather">GrandFather</option>
@@ -489,36 +489,18 @@
   // Call the checkConnection function
   checkConnection();
 
-  function clr() {
-    window.location.href = "registration-form1.html";
-  }
-
   async function addMem() {
-    let rep = document.getElementById('fullname').value;
-    let addMember1 = document.getElementById('member1').value;
-    let addMember2 = document.getElementById('member2').value;
-    let addMember3 = document.getElementById('member3').value;
-    let memBday1 = document.getElementById('bday').value;
-    let memBday2 = document.getElementById('bday2').value;
-    let memBday3 = document.getElementById('bday3').value;
-    let memAge1 = document.getElementById('age').value;
-    let memAge2 = document.getElementById('age2').value;
-    let memAge3 = document.getElementById('age3').value;
-    let memReligion1 = document.getElementById('religion').value;
-    let memReligion2 = document.getElementById('religion2').value;
-    let memReligion3 = document.getElementById('religion3').value;
-    let memEduc1 = document.getElementById('edAttain').value;
-    let memEduc2 = document.getElementById('edAttain2').value;
-    let memEduc3 = document.getElementById('edAttain3').value;
-    let memSource1 = document.getElementById('sourceIncome').value;
-    let memSource2 = document.getElementById('sourceIncome2').value;
-    let memSource3 = document.getElementById('sourceIncome3').value;
-    let memStay1 = document.getElementById('stay').value;
-    let memStay2 = document.getElementById('stay2').value;
-    let memStay3 = document.getElementById('stay3').value;
-    let memPhilID1 = document.getElementById('philID').value;
-    let memPhilID2 = document.getElementById('philID2').value;
-    let memPhilID3 = document.getElementById('philID3').value;
+
+    let compName = document.getElementById("fullname").value;
+    let compAddress = document.getElementById("completeAdd").value;
+
+    var ress = document.getElementById("relations");
+    var ressSelectedIndex = ress.selectedIndex;
+    var ressOptions = ress.options;
+    var relate = ressOptions[ressSelectedIndex].value;
+
+    let numHouse = document.getElementById("houseNum").value;
+    let bDate = document.getElementById("birthD").value;
 
 
     var gen = document.getElementsByName('gender');
@@ -527,23 +509,23 @@
       }
     }
 
-    var res = document.getElementById("relations");
-    var resSelectedIndex = res.selectedIndex;
-    var resOptions = res.options;
-    var relate = resOptions[resSelectedIndex].value;
-    console.log(relate);
-
     const { data, error } = await database
-        .from('addInfo')
-        .insert([
-          {
-            representative: rep,
-            gender: gen,
-            relation: relate
-          },
-        ])
-
+      .from('addInfo')
+      .insert([
+        {
+          representative: compName,
+          address: compAddress,
+          relation: relate,
+          houseNum: numHouse,
+          birthDate: bDate,
+          gender: gen
+        },
+      ])
     window.location.href = "registration-form2.html"
+  }
+
+  function clr() {
+    window.location.href = "registration-form1.html";
   }
 
 </script>
