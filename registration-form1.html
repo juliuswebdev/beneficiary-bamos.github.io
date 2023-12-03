@@ -10,7 +10,7 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <link rel="stylesheet" href="style.css" />
+  <link href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -21,12 +21,12 @@
     <form class="form">
       <div class="input-box">
         <label>Name</label>
-        <input type="text" id="fullname" placeholder="Enter your full name" required />
+        <input type="text" id="fullname" placeholder="Enter your full name"  />
       </div>
 
       <div class="input-box">
         <label>Address</label>
-        <input type="text" id="completeAdd" placeholder="Enter your full address" required />
+        <input type="text" id="completeAdd" placeholder="Enter your full address"  />
       </div>
 
       <div class="column">
@@ -53,11 +53,11 @@
 
         <div class="input-box">
           <label>House number</label>
-          <input type="number" placeholder="Enter house number" id="houseNum" required />
+          <input type="number" placeholder="Enter house number" id="houseNum"  />
         </div>
         <div class="input-box">
           <label>Birth Date</label>
-          <input type="date" placeholder="Enter birth date" id="birthD" required />
+          <input type="date" placeholder="Enter birth date" id="birthD"  />
         </div>
       </div>
       </div>
@@ -296,9 +296,13 @@
               <button type="button" onclick="clr()">Clear Form</button>
               <button type="submit" onclick="addMem()">Next</button>
             </div>
+          </div>
+        </div>
+      </div>
     </form>
   </section>
 </body>
+<main id="main">
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
@@ -458,7 +462,6 @@
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script type="text/javascript">
-
   // Import the Supabase client
 
   // Replace 'YOUR_SUPABASE_URL' and 'YOUR_SUPABASE_KEY' with your Supabase project URL and API key
@@ -472,7 +475,7 @@
   async function checkConnection() {
     try {
       // Try to make a request to Supabase to check the connection
-      const { data, error } = await database.from('addInfo').select();
+      const { data, error } = await database.from('miyembro').select();
 
       // If there's an error, log it
       if (error) {
@@ -490,18 +493,15 @@
   checkConnection();
 
   async function addMem() {
-
-    let compName = document.getElementById("fullname").value;
-    let compAddress = document.getElementById("completeAdd").value;
+    let repName = document.getElementById("fullname").innerText;
+    let repAdd = document.getElementById("completeAdd").text;
+    let repHouse = document.getElementById("houseNum").innerText;
+    let repBD = document.getElementById("birthD").outerText;
 
     var ress = document.getElementById("relations");
     var ressSelectedIndex = ress.selectedIndex;
     var ressOptions = ress.options;
-    var relate = ressOptions[ressSelectedIndex].value;
-
-    let numHouse = document.getElementById("houseNum").value;
-    let bDate = document.getElementById("birthD").value;
-
+    var relate = ressOptions[ressSelectedIndex].text;
 
     var gen = document.getElementsByName('gender');
     for (i = 0; i < gen.length; i++) {
@@ -510,22 +510,19 @@
     }
 
     const { data, error } = await database
-      .from('addInfo')
+      .from('miyembro')
       .insert([
         {
-          representative: compName,
-          address: compAddress,
-          relation: relate,
-          houseNum: numHouse,
-          birthDate: bDate,
-          gender: gen
+          pinuno: repName,
+          nakatira: repAdd,
+          sinoka: relate,
+          bahayNumero: repHouse,
+          isinilang: repBD,
+          kasarian: gen
         },
       ])
-    window.location.href = "registration-form2.html"
-  }
-
-  function clr() {
-    window.location.href = "registration-form1.html";
+      alert("Updated");
+      window.location.href = 'registration-form2.html'
   }
 
 </script>
