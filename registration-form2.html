@@ -400,7 +400,7 @@
   async function checkConnection() {
     try {
       // Try to make a request to Supabase to check the connection
-      const { data, error } = await database.from('form2').select();
+      const { data, error } = await database.from('pangkabuhayan').select();
 
       // If there's an error, log it
       if (error) {
@@ -423,7 +423,7 @@
       var resStatus = resOptions[resSelectedIndex].value;
     
     const { data, error } = await database
-      .from('form2')
+      .from('pangkabuhayan')
       .insert([
         {
           LupangKinatatayuan: resStatus,
